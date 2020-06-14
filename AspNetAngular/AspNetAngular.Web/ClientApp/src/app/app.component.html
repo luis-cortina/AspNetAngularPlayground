@@ -1,0 +1,38 @@
+<clr-main-container>
+  <clr-header style="background-color: hsl(198, 100%, 24%);">
+    <div class="branding">
+      <a [routerLink]="['/']" style="color:white" class="nav-link">
+        <clr-icon size="24" shape="clipboard"></clr-icon>
+        <span class="title">Erosion Work Management</span>
+      </a>
+    </div>
+    <div class="header-nav" [clr-nav-level]="1">
+      <!--<a *ngFor="let headerLink of headerLinks"
+             [routerLink]="headerLink.link" routerLinkActive="active"
+             class="nav-link nav-icon" (click)="headerLink.onClick">
+        <clr-icon [attr.shape]="headerLink.icon"></clr-icon>
+
+      </a>-->
+      <a *ngFor="let headerLink of headerLinks" [routerLink]="headerLink.link" routerLinkActive="active"
+         class="nav-link nav-text" (click)="headerLink.onClick">
+
+        <span class="nav-text">{{headerLink.label}}</span>
+
+      </a>
+    </div>
+    <div class="header-actions">
+      <clr-dropdown *ngIf="isAuthenticated | async">
+        <button class="nav-text" clrDropdownTrigger aria-label="open user profile">
+          {{userName  | async}}
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a [routerLink]='["/authentication/logout"]' [state]='{ local: true }' clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </clr-header>
+  <router-outlet></router-outlet>
+</clr-main-container>
+  
+
