@@ -1,0 +1,26 @@
+﻿<form (submit)="addPerson(newp)">
+  <input type="test" #newp>
+<button class="btn btn-success">
+  Send Person
+</button>
+</form>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Familia</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td>{{ item }}
+      <button (click)="sayHellow(item)" class="btn btn-success">
+        Saludar
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+

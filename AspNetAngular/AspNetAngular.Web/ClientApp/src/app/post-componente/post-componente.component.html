@@ -1,0 +1,12 @@
+<h1>Posts From https://jsonplaceholder.typicode.com/posts</h1>
+<clr-datagrid>
+<clr-dg-column>Title</clr-dg-column>
+<clr-dg-column>Post</clr-dg-column>
+
+<clr-dg-row *ngFor="let post of posts">
+  <clr-dg-cell>{{post.title}}</clr-dg-cell>
+  <clr-dg-cell>{{post.body}}</clr-dg-cell>
+</clr-dg-row>
+
+  <clr-dg-footer>{{posts.length}} posts</clr-dg-footer>
+</clr-datagrid>

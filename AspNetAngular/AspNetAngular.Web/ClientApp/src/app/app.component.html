@@ -3,7 +3,7 @@
     <div class="branding">
       <a [routerLink]="['/']" style="color:white" class="nav-link">
         <clr-icon size="24" shape="clipboard"></clr-icon>
-        <span class="title">Erosion Work Management</span>
+        <span class="title">{{ title }} </span>
       </a>
     </div>
     <div class="header-nav" [clr-nav-level]="1">
@@ -17,11 +17,11 @@
          class="nav-link nav-text" (click)="headerLink.onClick">
 
         <span class="nav-text">{{headerLink.label}}</span>
-
       </a>
     </div>
+
     <div class="header-actions">
-      <clr-dropdown *ngIf="isAuthenticated | async">
+      <clr-dropdown>
         <button class="nav-text" clrDropdownTrigger aria-label="open user profile">
           {{userName  | async}}
           <clr-icon shape="caret down"></clr-icon>
@@ -32,7 +32,19 @@
       </clr-dropdown>
     </div>
   </clr-header>
+
+  <ul>
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li>
+      <a routerLink="/family">Familia</a>
+    </li>
+    <li>
+      <a routerLink="/posts">Posts</a>
+    </li>
+  </ul>
   <router-outlet></router-outlet>
 </clr-main-container>
-  
+
 
